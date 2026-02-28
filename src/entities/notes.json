@@ -1,0 +1,336 @@
+{
+  "name": "notes",
+  "type": "object",
+  "required": [
+    "enrollmentId",
+    "contenu",
+    "auteurNom",
+    "suivi",
+    "creator",
+    "createdAt",
+    "updatedAt"
+  ],
+  "properties": {
+    "rencontreJeune": {
+      "description": "Nombre de rencontres avec le jeune",
+      "bsonType": "int"
+    },
+    "linkedDocuments": {
+      "description": "Liens vers documents PDF associés",
+      "bsonType": "array",
+      "items": {
+        "bsonType": "string"
+      }
+    },
+    "contactAutre": {
+      "bsonType": "int",
+      "description": "Nombre de contacts autres"
+    },
+    "checklist": {
+      "description": "Liste de tâches",
+      "bsonType": "array",
+      "items": {
+        "properties": {
+          "task": {
+            "bsonType": "string"
+          },
+          "completed": {
+            "bsonType": "bool"
+          }
+        },
+        "bsonType": "object"
+      }
+    },
+    "objectives": {
+      "items": {
+        "properties": {
+          "description": {
+            "bsonType": "string"
+          },
+          "progress": {
+            "bsonType": "int"
+          },
+          "title": {
+            "bsonType": "string"
+          },
+          "dueDate": {
+            "bsonType": "string",
+            "title": "datetime"
+          }
+        },
+        "bsonType": "object"
+      },
+      "bsonType": "array",
+      "description": "Objectifs SMART avec progression"
+    },
+    "auteurNom": {
+      "bsonType": "string",
+      "description": "Nom de l'auteur de la note"
+    },
+    "nombreParent": {
+      "bsonType": "int",
+      "description": "Nombre parent"
+    },
+    "contactParent": {
+      "bsonType": "int",
+      "description": "Nombre de contacts avec les parents"
+    },
+    "evolutionData": {
+      "description": "Données pour graphique d'évolution",
+      "bsonType": "array",
+      "items": {
+        "bsonType": "object",
+        "properties": {
+          "label": {
+            "bsonType": "string"
+          },
+          "date": {
+            "bsonType": "string",
+            "title": "datetime"
+          },
+          "value": {
+            "bsonType": "int"
+          }
+        }
+      }
+    },
+    "createdAt": {
+      "bsonType": "string",
+      "description": "Date de création (ISO 8601)",
+      "title": "datetime"
+    },
+    "updatedAt": {
+      "bsonType": "string",
+      "description": "Date de mise à jour (ISO 8601)",
+      "title": "datetime"
+    },
+    "rencontreScolaire": {
+      "bsonType": "int",
+      "description": "Nombre de rencontres scolaires"
+    },
+    "nombreAutre": {
+      "description": "Nombre autre",
+      "bsonType": "int"
+    },
+    "rencontreParent": {
+      "description": "Nombre de rencontres avec les parents",
+      "bsonType": "int"
+    },
+    "isConfidential": {
+      "bsonType": "bool",
+      "description": "Note confidentielle (visibilité restreinte)"
+    },
+    "enrollmentId": {
+      "description": "ID du dossier étudiant (référence à enrollments)",
+      "bsonType": "string"
+    },
+    "contactScolaire": {
+      "bsonType": "int",
+      "description": "Nombre de contacts scolaires"
+    },
+    "creator": {
+      "description": "ID du créateur",
+      "bsonType": "string"
+    },
+    "nombreJeune": {
+      "bsonType": "int",
+      "description": "Nombre jeune"
+    },
+    "counters": {
+      "description": "Données complètes et compteurs de la note (structure harmonisée)",
+      "properties": {
+        "notionsImportantes": {
+          "bsonType": "string"
+        },
+        "dateCreation": {
+          "bsonType": "string"
+        },
+        "rappelsSuivis": {
+          "bsonType": "string"
+        },
+        "rencontreJeune": {
+          "bsonType": "int"
+        },
+        "typeActivite": {
+          "bsonType": "string"
+        },
+        "ecole": {
+          "bsonType": "string"
+        },
+        "rencontreScolaire": {
+          "bsonType": "int"
+        },
+        "horaire": {
+          "bsonType": "string"
+        },
+        "activite": {
+          "bsonType": "string"
+        },
+        "rencontreAutre": {
+          "bsonType": "int"
+        },
+        "contactParent": {
+          "bsonType": "int"
+        },
+        "contactScolaire": {
+          "bsonType": "int"
+        },
+        "contactAutre": {
+          "bsonType": "int"
+        },
+        "elevesPresents": {
+          "bsonType": "string"
+        },
+        "intervenant": {
+          "bsonType": "string"
+        },
+        "rencontreParent": {
+          "bsonType": "int"
+        },
+        "contactJeune": {
+          "bsonType": "int"
+        },
+        "dateEvenement": {
+          "bsonType": "string"
+        },
+        "elevesAbsents": {
+          "bsonType": "string"
+        }
+      },
+      "bsonType": "object"
+    },
+    "contactJeune": {
+      "bsonType": "int",
+      "description": "Nombre de contacts avec le jeune"
+    },
+    "rencontreAutre": {
+      "description": "Nombre de rencontres autres",
+      "bsonType": "int"
+    },
+    "suivi": {
+      "description": "Indique si la note a été traitée/suivie",
+      "bsonType": "bool"
+    },
+    "contenu": {
+      "description": "Contenu de la note de suivi",
+      "bsonType": "string"
+    },
+    "template": {
+      "bsonType": "string",
+      "description": "Nom du modèle utilisé"
+    },
+    "mentions": {
+      "description": "Intervenants mentionnés (@nom)",
+      "bsonType": "array",
+      "items": {
+        "bsonType": "string"
+      }
+    },
+    "tags": {
+      "description": "Tags/Étiquettes pour catégoriser",
+      "items": {
+        "bsonType": "string"
+      },
+      "bsonType": "array"
+    },
+    "attachments": {
+      "description": "Pièces jointes (fichiers/images)",
+      "items": {
+        "properties": {
+          "fileType": {
+            "bsonType": "string"
+          },
+          "fileUrl": {
+            "bsonType": "string"
+          },
+          "fileName": {
+            "bsonType": "string"
+          }
+        },
+        "bsonType": "object"
+      },
+      "bsonType": "array"
+    },
+    "dateCreation": {
+      "description": "Date de création personnalisée (ISO 8601)",
+      "title": "datetime",
+      "bsonType": "string"
+    },
+    "nombreScolaire": {
+      "description": "Nombre scolaire",
+      "bsonType": "int"
+    },
+    "status": {
+      "bsonType": "string",
+      "enum": [
+        "actif",
+        "ferme",
+        "supprime"
+      ],
+      "description": "Statut de la note: actif, fermé ou supprimé"
+    },
+    "reminders": {
+      "description": "Rappels automatiques",
+      "items": {
+        "bsonType": "object",
+        "properties": {
+          "completed": {
+            "bsonType": "bool"
+          },
+          "message": {
+            "bsonType": "string"
+          },
+          "date": {
+            "title": "datetime",
+            "bsonType": "string"
+          }
+        }
+      },
+      "bsonType": "array"
+    },
+    "couleur": {
+      "bsonType": "string",
+      "description": "Couleur du post-it (yellow, pink, blue, green, orange, purple)"
+    },
+    "position": {
+      "bsonType": "object",
+      "description": "Position du post-it sur le tableau",
+      "properties": {
+        "x": {
+          "bsonType": "double"
+        },
+        "y": {
+          "bsonType": "double"
+        }
+      }
+    },
+    "categorie": {
+      "bsonType": "string",
+      "description": "Catégorie du post-it (principal, telephone, rencontre, urgent, general)"
+    },
+    "ecole": {
+      "bsonType": "string",
+      "description": "École associée au post-it"
+    },
+    "rappel": {
+      "bsonType": "object",
+      "description": "Rappel de rendez-vous",
+      "properties": {
+        "date": {
+          "bsonType": "string",
+          "title": "datetime"
+        },
+        "heure": {
+          "bsonType": "string"
+        },
+        "type": {
+          "bsonType": "string",
+          "enum": ["telephone_parent", "telephone_eleve", "rencontre", "suivi", "autre"]
+        },
+        "description": {
+          "bsonType": "string"
+        }
+      }
+    }
+  }
+}

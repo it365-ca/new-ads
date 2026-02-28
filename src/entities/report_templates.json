@@ -1,0 +1,60 @@
+{
+  "name": "report_templates",
+  "type": "object",
+  "security": "NO_RESTRICTIONS",
+  "required": [
+    "nom",
+    "contenuHTML",
+    "creator",
+    "createdAt",
+    "updatedAt"
+  ],
+  "properties": {
+    "nom": {
+      "bsonType": "string",
+      "description": "Nom du template"
+    },
+    "description": {
+      "bsonType": "string",
+      "description": "Description du template"
+    },
+    "contenuHTML": {
+      "bsonType": "string",
+      "description": "Contenu HTML du template avec placeholders"
+    },
+    "hasHeader": {
+      "bsonType": "bool",
+      "description": "Si le template a un en-tête"
+    },
+    "hasLogo": {
+      "bsonType": "bool",
+      "description": "Si le template inclut un logo"
+    },
+    "logoUrl": {
+      "bsonType": "string",
+      "description": "URL du logo"
+    },
+    "isPublic": {
+      "bsonType": "bool",
+      "description": "Si le template est accessible à tous"
+    },
+    "creator": {
+      "bsonType": "string",
+      "description": "Créateur du template"
+    },
+    "creatorEmail": {
+      "bsonType": "string",
+      "description": "Creator user email"
+    },
+    "createdAt": {
+      "bsonType": "string",
+      "title": "datetime",
+      "description": "ISO 8601 datetime string (UTC): YYYY-MM-DDTHH:mm:ss.sssZ"
+    },
+    "updatedAt": {
+      "bsonType": "string",
+      "title": "datetime",
+      "description": "ISO 8601 datetime string (UTC): YYYY-MM-DDTHH:mm:ss.sssZ"
+    }
+  }
+}

@@ -1,0 +1,90 @@
+{
+  "name": "students",
+  "type": "object",
+  "required": [
+    "firstName",
+    "lastName",
+    "email",
+    "studentId",
+    "dateOfBirth",
+    "major",
+    "enrollmentYear",
+    "status",
+    "gpa",
+    "creator",
+    "createdAt",
+    "updatedAt"
+  ],
+  "properties": {
+    "firstName": {
+      "bsonType": "string",
+      "description": "Prénom de l'étudiant"
+    },
+    "lastName": {
+      "bsonType": "string",
+      "description": "Nom de famille de l'étudiant"
+    },
+    "email": {
+      "bsonType": "string",
+      "description": "Adresse email de l'étudiant",
+      "pattern": "^[a-zA-Z0-9._%+-]+@[a-zA-Z0-9.-]+\\.[a-zA-Z]{2,}$"
+    },
+    "studentId": {
+      "bsonType": "string",
+      "description": "Numéro d'identification unique de l'étudiant"
+    },
+    "dateOfBirth": {
+      "bsonType": "string",
+      "title": "datetime",
+      "description": "Date de naissance au format ISO 8601"
+    },
+    "major": {
+      "bsonType": "string",
+      "description": "Filière d'études"
+    },
+    "enrollmentYear": {
+      "bsonType": "int",
+      "description": "Année d'inscription",
+      "minimum": 2000,
+      "maximum": 2030
+    },
+    "status": {
+      "bsonType": "string",
+      "enum": [
+        "active",
+        "graduated",
+        "suspended",
+        "withdrawn"
+      ],
+      "description": "Statut actuel de l'étudiant"
+    },
+    "gpa": {
+      "bsonType": "double",
+      "description": "Moyenne générale (0.0 - 4.0)",
+      "minimum": 0.0,
+      "maximum": 4.0
+    },
+    "phoneNumber": {
+      "bsonType": "string",
+      "description": "Numéro de téléphone"
+    },
+    "address": {
+      "bsonType": "string",
+      "description": "Adresse complète"
+    },
+    "creator": {
+      "bsonType": "string",
+      "description": "ID de l'utilisateur créateur"
+    },
+    "createdAt": {
+      "bsonType": "string",
+      "title": "datetime",
+      "description": "Date de création au format ISO 8601"
+    },
+    "updatedAt": {
+      "bsonType": "string",
+      "title": "datetime",
+      "description": "Date de dernière mise à jour au format ISO 8601"
+    }
+  }
+}

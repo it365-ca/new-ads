@@ -1,0 +1,336 @@
+{
+  "name": "enrollments",
+  "type": "object",
+  "required": [
+    "nom",
+    "prenom",
+    "dateNaissance",
+    "age",
+    "origine",
+    "genre",
+    "degreScolaire",
+    "adresse",
+    "codePostal",
+    "ville",
+    "demeurAvec",
+    "parent1Type",
+    "parent1Nom",
+    "parent1Prenom",
+    "parent1Tel",
+    "parent1Email",
+    "contactUrgence",
+    "contactUrgenceTel",
+    "contactUrgenceLien",
+    "epipen",
+    "ecoleReferente",
+    "intervenantNom",
+    "intervenantTitre",
+    "intervenantPoste",
+    "intervenantEmail",
+    "directionNom",
+    "directionEmail",
+    "programme",
+    "dateEntree",
+    "dateFin",
+    "apresSejourPlan",
+    "motifReference",
+    "motivationsAdolescent",
+    "status",
+    "creator",
+    "createdAt",
+    "updatedAt"
+  ],
+  "properties": {
+    "nom": {
+      "bsonType": "string",
+      "description": "Nom de famille de l'élève"
+    },
+    "prenom": {
+      "bsonType": "string",
+      "description": "Prénom de l'élève"
+    },
+    "dateNaissance": {
+      "bsonType": "string",
+      "title": "datetime",
+      "description": "Date de naissance (ISO 8601)"
+    },
+    "age": {
+      "bsonType": "int",
+      "description": "Âge de l'élève",
+      "minimum": 10,
+      "maximum": 20
+    },
+    "origine": {
+      "bsonType": "string",
+      "enum": [
+        "Canadienne",
+        "Asiatique occidental",
+        "Asiatique du Sud-Est",
+        "Europe de l'est/l'ouest",
+        "Sud-Asiatique",
+        "Latino-Américaine",
+        "Arabe",
+        "Africaine",
+        "Haïtienne",
+        "Chinoise",
+        "Autochtone"
+      ],
+      "description": "Origine ethnoculturelle"
+    },
+    "genre": {
+      "bsonType": "string",
+      "enum": [
+        "Masculin",
+        "Féminin",
+        "Autres"
+      ],
+      "description": "Genre de l'élève"
+    },
+    "degreScolaire": {
+      "bsonType": "string",
+      "enum": [
+        "6eme Primaire",
+        "Secondaire 1",
+        "Secondaire 2",
+        "Secondaire 3",
+        "Secondaire 4",
+        "Secondaire 5",
+        "FPT",
+        "FMS",
+        "GADP",
+        "GADSP",
+        "PEP"
+      ],
+      "description": "Degré scolaire actuel"
+    },
+    "adresse": {
+      "bsonType": "string",
+      "description": "Adresse complète de l'élève"
+    },
+    "codePostal": {
+      "bsonType": "string",
+      "description": "Code postal"
+    },
+    "ville": {
+      "bsonType": "string",
+      "description": "Ville de résidence"
+    },
+    "demeurAvec": {
+      "bsonType": "string",
+      "enum": [
+        "Ami",
+        "Autre",
+        "Beau-Père",
+        "En résidence",
+        "Foyer de groupe",
+        "Garde partagée",
+        "Grand-mère et Oncle",
+        "Grande-Sœur",
+        "Grands-parents paternels",
+        "La mère",
+        "Le père",
+        "Les deux parents",
+        "Tante",
+        "Oncle",
+        "Tuteur",
+        "Grand-Frère"
+      ],
+      "description": "L'élève demeure avec"
+    },
+    "parent1Type": {
+      "bsonType": "string",
+      "description": "Type du premier répondant (père, mère, tuteur)"
+    },
+    "parent1Nom": {
+      "bsonType": "string",
+      "description": "Nom du premier répondant"
+    },
+    "parent1Prenom": {
+      "bsonType": "string",
+      "description": "Prénom du premier répondant"
+    },
+    "parent1Tel": {
+      "bsonType": "string",
+      "description": "Téléphone du premier répondant"
+    },
+    "parent1Email": {
+      "bsonType": "string",
+      "description": "Email du premier répondant"
+    },
+    "parent2Type": {
+      "bsonType": "string",
+      "description": "Type du deuxième répondant (optionnel)"
+    },
+    "parent2Nom": {
+      "bsonType": "string",
+      "description": "Nom du deuxième répondant (optionnel)"
+    },
+    "parent2Prenom": {
+      "bsonType": "string",
+      "description": "Prénom du deuxième répondant (optionnel)"
+    },
+    "parent2Tel": {
+      "bsonType": "string",
+      "description": "Téléphone du deuxième répondant (optionnel)"
+    },
+    "parent2Email": {
+      "bsonType": "string",
+      "description": "Email du deuxième répondant (optionnel)"
+    },
+    "contactUrgence": {
+      "bsonType": "string",
+      "description": "Personne à contacter en cas d'urgence"
+    },
+    "contactUrgenceTel": {
+      "bsonType": "string",
+      "description": "Téléphone d'urgence"
+    },
+    "contactUrgenceLien": {
+      "bsonType": "string",
+      "description": "Lien de parenté avec le contact d'urgence"
+    },
+    "problemeSante": {
+      "bsonType": "string",
+      "description": "Problèmes de santé (optionnel)"
+    },
+    "allergies": {
+      "bsonType": "string",
+      "description": "Allergies (optionnel)"
+    },
+    "epipen": {
+      "bsonType": "string",
+      "enum": [
+        "oui",
+        "non"
+      ],
+      "description": "Nécessite un épipen"
+    },
+    "ecoleReferente": {
+      "bsonType": "string",
+      "description": "École référente"
+    },
+    "intervenantNom": {
+      "bsonType": "string",
+      "description": "Nom de l'intervenant scolaire"
+    },
+    "intervenantTitre": {
+      "bsonType": "string",
+      "description": "Titre de l'intervenant"
+    },
+    "intervenantPoste": {
+      "bsonType": "string",
+      "description": "Numéro de poste de l'intervenant"
+    },
+    "intervenantEmail": {
+      "bsonType": "string",
+      "description": "Email de l'intervenant"
+    },
+    "directionNom": {
+      "bsonType": "string",
+      "description": "Nom de la direction"
+    },
+    "directionEmail": {
+      "bsonType": "string",
+      "description": "Email de la direction"
+    },
+    "programme": {
+      "bsonType": "string",
+      "enum": [
+        "ALT",
+        "OPTION",
+        "PIVOT",
+        "APOSTROPHE",
+        "SAUTS",
+        "Suivis Estivaux"
+      ],
+      "description": "Programme choisi"
+    },
+    "dateEntree": {
+      "bsonType": "string",
+      "title": "datetime",
+      "description": "Date d'entrée au programme (ISO 8601)"
+    },
+    "dateFin": {
+      "bsonType": "string",
+      "title": "datetime",
+      "description": "Date de fin du programme (ISO 8601)"
+    },
+    "apresSejourPlan": {
+      "bsonType": "string",
+      "enum": [
+        "Changement d'école",
+        "Changement de programme",
+        "Réintégration",
+        "À évaluer"
+      ],
+      "description": "Plan après le séjour"
+    },
+    "motifReference": {
+      "bsonType": "string",
+      "description": "Motif principal de référence"
+    },
+    "moyensProposesAutres": {
+      "bsonType": "string",
+      "description": "Autres moyens proposés (optionnel)"
+    },
+    "moyensProposesChecked": {
+      "bsonType": "object",
+      "description": "Moyens proposés cochés",
+      "properties": {
+        "emulation": {
+          "bsonType": "bool"
+        },
+        "rencontreParents": {
+          "bsonType": "bool"
+        },
+        "horaireAdapte": {
+          "bsonType": "bool"
+        },
+        "suiviTES": {
+          "bsonType": "bool"
+        },
+        "planIntervention": {
+          "bsonType": "bool"
+        },
+        "suiviPsycho": {
+          "bsonType": "bool"
+        },
+        "rencontreTutrice": {
+          "bsonType": "bool"
+        }
+      }
+    },
+    "suiviExterne": {
+      "bsonType": "string",
+      "description": "Suivi externe (optionnel)"
+    },
+    "motivationsAdolescent": {
+      "bsonType": "string",
+      "description": "Motivations de l'adolescent"
+    },
+    "status": {
+      "bsonType": "string",
+      "enum": [
+        "en_attente",
+        "actif",
+        "ferme",
+        "refuse"
+      ],
+      "description": "Statut du dossier"
+    },
+    "creator": {
+      "bsonType": "string",
+      "description": "ID du créateur"
+    },
+    "createdAt": {
+      "bsonType": "string",
+      "title": "datetime",
+      "description": "Date de création (ISO 8601)"
+    },
+    "updatedAt": {
+      "bsonType": "string",
+      "title": "datetime",
+      "description": "Date de mise à jour (ISO 8601)"
+    }
+  }
+}

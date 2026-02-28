@@ -1,0 +1,48 @@
+{
+  "name": "userSettings",
+  "type": "object",
+  "required": [
+    "userId",
+    "theme"
+  ],
+  "properties": {
+    "userId": {
+      "bsonType": "string",
+      "description": "ID utilisateur Lumi (provenant de lumi.auth.user.userId)"
+    },
+    "theme": {
+      "bsonType": "string",
+      "description": "Nom du thème choisi par l'utilisateur",
+      "enum": [
+        "ocean",
+        "violet",
+        "nature",
+        "rose",
+        "orange",
+        "sombre",
+        "rouge",
+        "turquoise",
+        "lavande",
+        "menthe",
+        "corail",
+        "bleuNuit",
+        "or",
+        "amethyste",
+        "emeraude",
+        "saumon",
+        "indigo",
+        "cyan",
+        "magenta",
+        "bronze"
+      ]
+    },
+    "createdAt": {
+      "bsonType": "string",
+      "description": "Date de création (ISO 8601)"
+    },
+    "updatedAt": {
+      "bsonType": "string",
+      "description": "Date de dernière mise à jour (ISO 8601)"
+    }
+  }
+}

@@ -1,0 +1,91 @@
+{
+  "name": "messages",
+  "type": "object",
+  "required": [
+    "senderId",
+    "senderName",
+    "senderRole",
+    "recipientId",
+    "recipientName",
+    "recipientRole",
+    "content",
+    "isRead",
+    "creator",
+    "createdAt",
+    "updatedAt"
+  ],
+  "properties": {
+    "senderId": {
+      "bsonType": "string",
+      "description": "ID de l'expéditeur (userId Lumi)"
+    },
+    "senderName": {
+      "bsonType": "string",
+      "description": "Nom de l'expéditeur"
+    },
+    "senderRole": {
+      "bsonType": "string",
+      "enum": [
+        "ADMIN",
+        "USER"
+      ],
+      "description": "Rôle de l'expéditeur"
+    },
+    "recipientId": {
+      "bsonType": "string",
+      "description": "ID du destinataire (userId Lumi)"
+    },
+    "recipientName": {
+      "bsonType": "string",
+      "description": "Nom du destinataire"
+    },
+    "recipientRole": {
+      "bsonType": "string",
+      "enum": [
+        "ADMIN",
+        "USER"
+      ],
+      "description": "Rôle du destinataire"
+    },
+    "content": {
+      "bsonType": "string",
+      "description": "Contenu du message"
+    },
+    "isRead": {
+      "bsonType": "bool",
+      "description": "Message lu ou non"
+    },
+    "attachments": {
+      "bsonType": "array",
+      "description": "Fichiers joints (URLs)",
+      "items": {
+        "bsonType": "object",
+        "properties": {
+          "url": {
+            "bsonType": "string"
+          },
+          "name": {
+            "bsonType": "string"
+          },
+          "type": {
+            "bsonType": "string"
+          }
+        }
+      }
+    },
+    "creator": {
+      "bsonType": "string",
+      "description": "Créateur de l'enregistrement"
+    },
+    "createdAt": {
+      "bsonType": "string",
+      "title": "datetime",
+      "description": "Date de création (ISO 8601)"
+    },
+    "updatedAt": {
+      "bsonType": "string",
+      "title": "datetime",
+      "description": "Date de mise à jour (ISO 8601)"
+    }
+  }
+}

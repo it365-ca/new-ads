@@ -1,0 +1,76 @@
+{
+  "name": "intervenants",
+  "type": "object",
+  "required": [
+    "nom",
+    "prenom",
+    "email",
+    "actif",
+    "dateAjout"
+  ],
+  "properties": {
+    "nom": {
+      "bsonType": "string",
+      "description": "Nom de famille de l'intervenant"
+    },
+    "prenom": {
+      "bsonType": "string",
+      "description": "Prénom de l'intervenant"
+    },
+    "email": {
+      "bsonType": "string",
+      "pattern": "^[^\\s@]+@[^\\s@]+\\.[^\\s@]+$",
+      "description": "Email de l'intervenant (unique)"
+    },
+    "userId": {
+      "bsonType": "string",
+      "description": "ID utilisateur Lumi (optionnel, sera rempli à la première connexion)"
+    },
+    "actif": {
+      "bsonType": "bool",
+      "description": "Statut actif/inactif de l'intervenant"
+    },
+    "dateAjout": {
+      "bsonType": "string",
+      "description": "Date d'ajout au format ISO 8601"
+    },
+    "telephone": {
+      "bsonType": "string",
+      "description": "Numéro de téléphone (optionnel)"
+    },
+    "specialite": {
+      "bsonType": "string",
+      "description": "Domaine de spécialité (optionnel)"
+    },
+    "passwordHash": {
+      "bsonType": "string",
+      "description": "Hash du mot de passe (bcrypt)"
+    },
+    "salt": {
+      "bsonType": "string",
+      "description": "Salt unique pour le hashing"
+    },
+    "permissions": {
+      "bsonType": "object",
+      "description": "Permissions de l'intervenant",
+      "properties": {
+        "accessNotes": {
+          "bsonType": "bool",
+          "description": "Accès aux notes"
+        },
+        "accessStats": {
+          "bsonType": "bool",
+          "description": "Accès aux statistiques"
+        },
+        "modifierEtudiants": {
+          "bsonType": "bool",
+          "description": "Permission de modifier les étudiants"
+        }
+      }
+    },
+    "mustChangePassword": {
+      "bsonType": "bool",
+      "description": "L'intervenant doit changer son mot de passe à la prochaine connexion"
+    }
+  }
+}

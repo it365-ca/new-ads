@@ -1,0 +1,75 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+/* Animations pour le modal */
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
+  }
+}
+
+@keyframes slideUp {
+  from {
+    opacity: 0;
+    transform: translateY(20px) scale(0.95);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0) scale(1);
+  }
+}
+
+.animate-fadeIn {
+  animation: fadeIn 0.2s ease-out;
+}
+
+.animate-slideUp {
+  animation: slideUp 0.3s ease-out;
+}
+
+/* Masquer l'heure dans le widget meteored */
+#mrwid709e82f324d72b0cdfb52efba2fa5145 .clock,
+#mrwid709e82f324d72b0cdfb52efba2fa5145 .time {
+  display: none !important;
+}
+
+/* Uniformisation des polices pour tous les composants de statistiques */
+.stats-container,
+.stats-container * {
+  font-family: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif !important;
+}
+
+.stats-title {
+  font-size: 1.125rem !important;
+  font-weight: 600 !important;
+  color: #1f2937 !important;
+  margin-bottom: 1rem !important;
+}
+
+.stats-table {
+  font-size: 0.875rem !important;
+}
+
+.stats-table th {
+  font-weight: 600 !important;
+  font-size: 0.8125rem !important;
+  color: #4b5563 !important;
+  text-transform: uppercase !important;
+  letter-spacing: 0.025em !important;
+}
+
+.stats-table td {
+  font-size: 0.875rem !important;
+  color: #374151 !important;
+}
+
+.stats-card {
+  background: white !important;
+  border-radius: 0.5rem !important;
+  padding: 1.5rem !important;
+  box-shadow: 0 1px 3px 0 rgba(0, 0, 0, 0.1) !important;
+}

@@ -1,0 +1,125 @@
+{
+  "name": "programmes",
+  "type": "object",
+  "permissions": {
+    "create": "LOGGED_IN",
+    "read": "NO_RESTRICTIONS",
+    "update": "LOGGED_IN",
+    "delete": "LOGGED_IN"
+  },
+  "required": [
+    "nom",
+    "code",
+    "actif",
+    "statsConfiguration",
+    "creator",
+    "createdAt",
+    "updatedAt"
+  ],
+  "properties": {
+    "nom": {
+      "bsonType": "string",
+      "description": "Nom complet du programme"
+    },
+    "code": {
+      "bsonType": "string",
+      "description": "Code abrégé du programme (ex: ALT, PIVOT, OPTION)"
+    },
+    "description": {
+      "bsonType": "string",
+      "description": "Description détaillée du programme"
+    },
+    "actif": {
+      "bsonType": "bool",
+      "description": "Si le programme est actif ou archivé"
+    },
+    "couleur": {
+      "bsonType": "string",
+      "description": "Couleur hexadécimale pour l'affichage (ex: #6366f1)"
+    },
+    "icone": {
+      "bsonType": "string",
+      "description": "Emoji ou icône du programme"
+    },
+    "statsConfiguration": {
+      "bsonType": "object",
+      "description": "Configuration des statistiques à afficher pour ce programme",
+      "properties": {
+        "afficherGenre": {
+          "bsonType": "bool",
+          "description": "Afficher les statistiques par genre"
+        },
+        "afficherAge": {
+          "bsonType": "bool",
+          "description": "Afficher les statistiques par âge"
+        },
+        "afficherDegre": {
+          "bsonType": "bool",
+          "description": "Afficher les statistiques par degré scolaire"
+        },
+        "afficherEcole": {
+          "bsonType": "bool",
+          "description": "Afficher les statistiques par école"
+        },
+        "afficherVille": {
+          "bsonType": "bool",
+          "description": "Afficher les statistiques par ville"
+        },
+        "afficherOrigine": {
+          "bsonType": "bool",
+          "description": "Afficher les statistiques par origine"
+        },
+        "afficherDemeurAvec": {
+          "bsonType": "bool",
+          "description": "Afficher les statistiques par situation familiale"
+        },
+        "afficherInterventions": {
+          "bsonType": "bool",
+          "description": "Afficher les statistiques d'interventions"
+        },
+        "afficherPresence": {
+          "bsonType": "bool",
+          "description": "Afficher les statistiques de présence"
+        },
+        "afficherEvolution": {
+          "bsonType": "bool",
+          "description": "Afficher l'évolution mensuelle"
+        },
+        "afficherConversion": {
+          "bsonType": "bool",
+          "description": "Afficher le taux de conversion des statuts"
+        }
+      }
+    },
+    "ordre": {
+      "bsonType": "int",
+      "description": "Ordre d'affichage du programme"
+    },
+    "capaciteMax": {
+      "bsonType": "int",
+      "description": "Capacité maximale d'étudiants (optionnel)"
+    },
+    "dureeTypique": {
+      "bsonType": "string",
+      "description": "Durée typique du programme (ex: '3 mois', '6 mois')"
+    },
+    "creator": {
+      "bsonType": "string",
+      "description": "ID du créateur"
+    },
+    "creatorEmail": {
+      "bsonType": "string",
+      "description": "Creator user email"
+    },
+    "createdAt": {
+      "bsonType": "string",
+      "title": "datetime",
+      "description": "ISO 8601 datetime string (UTC): YYYY-MM-DDTHH:mm:ss.sssZ"
+    },
+    "updatedAt": {
+      "bsonType": "string",
+      "title": "datetime",
+      "description": "ISO 8601 datetime string (UTC): YYYY-MM-DDTHH:mm:ss.sssZ"
+    }
+  }
+}

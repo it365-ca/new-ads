@@ -1,0 +1,79 @@
+{
+  "name": "conversations",
+  "type": "object",
+  "required": [
+    "participants",
+    "lastMessage",
+    "lastMessageAt",
+    "unreadCount",
+    "creator",
+    "createdAt",
+    "updatedAt",
+    "isGroup",
+    "groupName"
+  ],
+  "properties": {
+    "participants": {
+      "bsonType": "array",
+      "description": "Liste des participants (userId)",
+      "items": {
+        "bsonType": "object",
+        "properties": {
+          "userId": {
+            "bsonType": "string"
+          },
+          "userName": {
+            "bsonType": "string"
+          },
+          "userRole": {
+            "bsonType": "string",
+            "enum": [
+              "ADMIN",
+              "USER"
+            ]
+          }
+        }
+      }
+    },
+    "lastMessage": {
+      "bsonType": "string",
+      "description": "Aperçu du dernier message"
+    },
+    "lastMessageAt": {
+      "bsonType": "string",
+      "title": "datetime",
+      "description": "Date du dernier message"
+    },
+    "unreadCount": {
+      "bsonType": "object",
+      "description": "Compteur de messages non lus par participant",
+      "additionalProperties": true
+    },
+    "creator": {
+      "bsonType": "string",
+      "description": "Créateur de la conversation"
+    },
+    "createdAt": {
+      "bsonType": "string",
+      "title": "datetime",
+      "description": "Date de création"
+    },
+    "updatedAt": {
+      "bsonType": "string",
+      "title": "datetime",
+      "description": "Date de mise à jour"
+    },
+    "isGroup": {
+      "bsonType": "bool",
+      "description": "Indique si c'est une conversation de groupe"
+    },
+    "groupName": {
+      "bsonType": "string",
+      "description": "Nom du groupe (vide pour conversations 1-à-1)"
+    },
+    "groupAvatar": {
+      "bsonType": "string",
+      "description": "URL de l'avatar du groupe (optionnel)"
+    }
+  }
+}

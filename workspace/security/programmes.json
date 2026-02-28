@@ -1,0 +1,6 @@
+{
+  "create": "NO_RESTRICTIONS",
+  "read": "NO_RESTRICTIONS",
+  "update": "NO_RESTRICTIONS",
+  "delete": "NO_RESTRICTIONS"
+}

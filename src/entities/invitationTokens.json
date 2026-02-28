@@ -1,0 +1,38 @@
+{
+  "name": "invitationTokens",
+  "type": "object",
+  "required": [
+    "email",
+    "token",
+    "intervenantId",
+    "expiresAt",
+    "createdAt"
+  ],
+  "properties": {
+    "email": {
+      "bsonType": "string",
+      "description": "Email de l'intervenant invité",
+      "pattern": "^[a-zA-Z0-9._%+-]+@[a-zA-Z0-9.-]+\\.[a-zA-Z]{2,}$"
+    },
+    "token": {
+      "bsonType": "string",
+      "description": "Token unique d'invitation (UUID)"
+    },
+    "intervenantId": {
+      "bsonType": "string",
+      "description": "ID de l'intervenant dans la collection intervenants"
+    },
+    "expiresAt": {
+      "bsonType": "string",
+      "description": "Date d'expiration du token (ISO 8601, 7 jours)"
+    },
+    "createdAt": {
+      "bsonType": "string",
+      "description": "Date de création du token (ISO 8601)"
+    },
+    "used": {
+      "bsonType": "bool",
+      "description": "Indique si le token a été utilisé"
+    }
+  }
+}

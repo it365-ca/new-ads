@@ -1,0 +1,66 @@
+{
+  "name": "courses",
+  "type": "object",
+  "required": [
+    "courseName",
+    "courseCode",
+    "credits",
+    "semester",
+    "instructor",
+    "creator",
+    "createdAt",
+    "updatedAt"
+  ],
+  "properties": {
+    "courseName": {
+      "bsonType": "string",
+      "description": "Nom du cours"
+    },
+    "courseCode": {
+      "bsonType": "string",
+      "description": "Code unique du cours"
+    },
+    "credits": {
+      "bsonType": "int",
+      "description": "Nombre de crédits",
+      "minimum": 1,
+      "maximum": 6
+    },
+    "semester": {
+      "bsonType": "string",
+      "enum": [
+        "Fall",
+        "Spring",
+        "Summer"
+      ],
+      "description": "Semestre d'enseignement"
+    },
+    "instructor": {
+      "bsonType": "string",
+      "description": "Nom de l'enseignant"
+    },
+    "description": {
+      "bsonType": "string",
+      "description": "Description du cours"
+    },
+    "maxStudents": {
+      "bsonType": "int",
+      "description": "Nombre maximum d'étudiants",
+      "minimum": 1
+    },
+    "creator": {
+      "bsonType": "string",
+      "description": "ID de l'utilisateur créateur"
+    },
+    "createdAt": {
+      "bsonType": "string",
+      "title": "datetime",
+      "description": "Date de création au format ISO 8601"
+    },
+    "updatedAt": {
+      "bsonType": "string",
+      "title": "datetime",
+      "description": "Date de dernière mise à jour au format ISO 8601"
+    }
+  }
+}

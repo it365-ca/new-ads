@@ -1,0 +1,76 @@
+{
+  "name": "reports",
+  "type": "object",
+  "required": [
+    "enrollmentId",
+    "titre",
+    "contenu",
+    "typeTemplate",
+    "creator",
+    "createdAt",
+    "updatedAt"
+  ],
+  "properties": {
+    "enrollmentId": {
+      "bsonType": "string",
+      "description": "ID de l'étudiant (réel ou virtuel)"
+    },
+    "titre": {
+      "bsonType": "string",
+      "description": "Titre du rapport"
+    },
+    "contenu": {
+      "bsonType": "string",
+      "description": "Contenu HTML du rapport"
+    },
+    "typeTemplate": {
+      "bsonType": "string",
+      "description": "Type de template utilisé",
+      "enum": [
+        "standard",
+        "avec_notes",
+        "resume_notes",
+        "personnalise"
+      ]
+    },
+    "templateId": {
+      "bsonType": "string",
+      "description": "ID du template utilisé (optionnel)"
+    },
+    "metadata": {
+      "bsonType": "object",
+      "description": "Métadonnées supplémentaires (dates, auteur, etc.)",
+      "properties": {
+        "dateDebut": {
+          "bsonType": "string",
+          "title": "datetime"
+        },
+        "dateFin": {
+          "bsonType": "string",
+          "title": "datetime"
+        },
+        "auteurNom": {
+          "bsonType": "string"
+        }
+      }
+    },
+    "creator": {
+      "bsonType": "string",
+      "description": "Créateur du rapport"
+    },
+    "creatorEmail": {
+      "bsonType": "string",
+      "description": "Creator user email"
+    },
+    "createdAt": {
+      "bsonType": "string",
+      "title": "datetime",
+      "description": "ISO 8601 datetime string (UTC): YYYY-MM-DDTHH:mm:ss.sssZ"
+    },
+    "updatedAt": {
+      "bsonType": "string",
+      "title": "datetime",
+      "description": "ISO 8601 datetime string (UTC): YYYY-MM-DDTHH:mm:ss.sssZ"
+    }
+  }
+}

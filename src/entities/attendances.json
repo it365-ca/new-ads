@@ -1,0 +1,67 @@
+{
+  "name": "attendances",
+  "type": "object",
+  "required": [
+    "enrollmentId",
+    "date",
+    "status",
+    "creator",
+    "createdAt",
+    "updatedAt"
+  ],
+  "properties": {
+    "enrollmentId": {
+      "bsonType": "string",
+      "description": "Référence à l'inscription de l'étudiant"
+    },
+    "date": {
+      "bsonType": "string",
+      "title": "datetime",
+      "description": "Date de présence (ISO 8601)"
+    },
+    "status": {
+      "bsonType": "string",
+      "enum": [
+        "present",
+        "absent",
+        "non_marque"
+      ],
+      "description": "Statut de présence"
+    },
+    "notes": {
+      "bsonType": "string",
+      "description": "Notes additionnelles (optionnel)"
+    },
+    "motifAbsence": {
+      "bsonType": "string",
+      "enum": [
+        "maladie",
+        "rendez_vous_medical",
+        "probleme_familial",
+        "probleme_transport",
+        "absence_justifiee",
+        "absence_non_justifiee",
+        "autre"
+      ],
+      "description": "Motif d'absence (optionnel)"
+    },
+    "commentaire": {
+      "bsonType": "string",
+      "description": "Commentaire sur le comportement ou participation (optionnel)"
+    },
+    "creator": {
+      "bsonType": "string",
+      "description": "ID du créateur"
+    },
+    "createdAt": {
+      "bsonType": "string",
+      "title": "datetime",
+      "description": "Date de création (ISO 8601)"
+    },
+    "updatedAt": {
+      "bsonType": "string",
+      "title": "datetime",
+      "description": "Date de mise à jour (ISO 8601)"
+    }
+  }
+}

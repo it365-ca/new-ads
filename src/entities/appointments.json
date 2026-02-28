@@ -1,0 +1,121 @@
+{
+  "type": "object",
+  "required": ["titre", "dateRendezVous", "heureRendezVous", "enrollmentId", "intervenantId", "participants", "createdAt", "updatedAt"],
+  "additionalProperties": true,
+  "properties": {
+    "titre": {
+      "bsonType": "string",
+      "description": "Titre du rendez-vous (ex: Rencontre de suivi)"
+    },
+    "dateRendezVous": {
+      "bsonType": "string",
+      "title": "datetime",
+      "description": "Date et heure du rendez-vous (ISO 8601)"
+    },
+    "heureRendezVous": {
+      "bsonType": "string",
+      "description": "Heure du rendez-vous (format HH:MM)"
+    },
+    "duree": {
+      "bsonType": "int",
+      "description": "Durée en minutes (30, 60, etc.)"
+    },
+    "lieu": {
+      "bsonType": "string",
+      "description": "Lieu du rendez-vous (adresse ou lien virtuel)"
+    },
+    "typeRendezVous": {
+      "bsonType": "string",
+      "enum": ["en_personne", "virtuel", "telephone"],
+      "description": "Type de rendez-vous"
+    },
+    "enrollmentId": {
+      "bsonType": "string",
+      "description": "ID de l'étudiant concerné"
+    },
+    "intervenantId": {
+      "bsonType": "string",
+      "description": "ID de l'intervenant qui crée le RDV"
+    },
+    "intervenantNom": {
+      "bsonType": "string",
+      "description": "Nom de l'intervenant"
+    },
+    "participants": {
+      "bsonType": "array",
+      "description": "Liste des participants (parents, élève)",
+      "items": {
+        "bsonType": "object",
+        "properties": {
+          "type": {
+            "bsonType": "string",
+            "enum": ["parent1", "parent2", "eleve"],
+            "description": "Type de participant"
+          },
+          "nom": {
+            "bsonType": "string",
+            "description": "Nom du participant"
+          },
+          "email": {
+            "bsonType": "string",
+            "description": "Email du participant"
+          },
+          "telephone": {
+            "bsonType": "string",
+            "description": "Téléphone du participant"
+          },
+          "confirme": {
+            "bsonType": "bool",
+            "description": "A confirmé sa présence"
+          },
+          "confirmationToken": {
+            "bsonType": "string",
+            "description": "Token unique de confirmation"
+          },
+          "dateConfirmation": {
+            "bsonType": "string",
+            "title": "datetime",
+            "description": "Date de confirmation"
+          }
+        }
+      }
+    },
+    "notes": {
+      "bsonType": "string",
+      "description": "Notes additionnelles sur le RDV"
+    },
+    "status": {
+      "bsonType": "string",
+      "enum": ["en_attente", "confirme", "annule", "complete"],
+      "description": "Statut du rendez-vous"
+    },
+    "rappel48hEnvoye": {
+      "bsonType": "bool",
+      "description": "Rappel 48h envoyé"
+    },
+    "rappel24hEnvoye": {
+      "bsonType": "bool",
+      "description": "Rappel 24h envoyé"
+    },
+    "dateRappel48h": {
+      "bsonType": "string",
+      "title": "datetime",
+      "description": "Date d'envoi du rappel 48h"
+    },
+    "dateRappel24h": {
+      "bsonType": "string",
+      "title": "datetime",
+      "description": "Date d'envoi du rappel 24h"
+    },
+    "createdAt": {
+      "bsonType": "string",
+      "title": "datetime",
+      "description": "Date de création"
+    },
+    "updatedAt": {
+      "bsonType": "string",
+      "title": "datetime",
+      "description": "Date de dernière modification"
+    }
+  }
+}

@@ -1,0 +1,36 @@
+{
+  "name": "authSessions",
+  "type": "object",
+  "required": [
+    "userId",
+    "sessionToken",
+    "expiresAt",
+    "createdAt"
+  ],
+  "properties": {
+    "userId": {
+      "bsonType": "string",
+      "description": "ID de l'utilisateur (référence à intervenants.userId)"
+    },
+    "sessionToken": {
+      "bsonType": "string",
+      "description": "Token de session unique (UUID)"
+    },
+    "expiresAt": {
+      "bsonType": "string",
+      "description": "Date d'expiration de la session (ISO 8601)"
+    },
+    "createdAt": {
+      "bsonType": "string",
+      "description": "Date de création de la session (ISO 8601)"
+    },
+    "userAgent": {
+      "bsonType": "string",
+      "description": "User agent du navigateur"
+    },
+    "ipAddress": {
+      "bsonType": "string",
+      "description": "Adresse IP de connexion"
+    }
+  }
+}

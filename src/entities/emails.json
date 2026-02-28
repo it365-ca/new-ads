@@ -1,0 +1,77 @@
+{
+  "name": "emails",
+  "type": "object",
+  "required": [
+    "enrollmentId",
+    "to",
+    "subject",
+    "body",
+    "sentBy",
+    "sentByEmail",
+    "sentAt",
+    "creator",
+    "createdAt",
+    "updatedAt"
+  ],
+  "properties": {
+    "enrollmentId": {
+      "bsonType": "string",
+      "description": "ID de l'étudiant destinataire"
+    },
+    "to": {
+      "bsonType": "string",
+      "description": "Adresse courriel du destinataire"
+    },
+    "subject": {
+      "bsonType": "string",
+      "description": "Sujet du courriel"
+    },
+    "body": {
+      "bsonType": "string",
+      "description": "Contenu du courriel (HTML ou texte)"
+    },
+    "sentBy": {
+      "bsonType": "string",
+      "description": "Nom de l'intervenant qui a envoyé"
+    },
+    "sentByEmail": {
+      "bsonType": "string",
+      "description": "Email de l'intervenant pour reply-to"
+    },
+    "sentAt": {
+      "bsonType": "string",
+      "title": "datetime",
+      "description": "Date et heure d'envoi ISO 8601"
+    },
+    "status": {
+      "bsonType": "string",
+      "enum": [
+        "sent",
+        "failed"
+      ],
+      "description": "Statut d'envoi"
+    },
+    "errorMessage": {
+      "bsonType": "string",
+      "description": "Message d'erreur si échec"
+    },
+    "creator": {
+      "bsonType": "string",
+      "description": "Créateur de l'enregistrement"
+    },
+    "creatorEmail": {
+      "bsonType": "string",
+      "description": "Creator user email"
+    },
+    "createdAt": {
+      "bsonType": "string",
+      "title": "datetime",
+      "description": "ISO 8601 datetime string (UTC): YYYY-MM-DDTHH:mm:ss.sssZ"
+    },
+    "updatedAt": {
+      "bsonType": "string",
+      "title": "datetime",
+      "description": "ISO 8601 datetime string (UTC): YYYY-MM-DDTHH:mm:ss.sssZ"
+    }
+  }
+}

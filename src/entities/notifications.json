@@ -1,0 +1,59 @@
+{
+  "name": "notifications",
+  "type": "object",
+  "required": [
+    "userId",
+    "type",
+    "titre",
+    "message",
+    "entityId",
+    "lu",
+    "createdAt"
+  ],
+  "properties": {
+    "userId": {
+      "bsonType": "string",
+      "description": "ID de l'utilisateur destinataire"
+    },
+    "type": {
+      "bsonType": "string",
+      "enum": [
+        "new_enrollment",
+        "ticket_response"
+      ],
+      "description": "Type de notification"
+    },
+    "titre": {
+      "bsonType": "string",
+      "description": "Titre de la notification"
+    },
+    "message": {
+      "bsonType": "string",
+      "description": "Contenu de la notification"
+    },
+    "entityId": {
+      "bsonType": "string",
+      "description": "ID de l'entité concernée (enrollment, ticket, etc.)"
+    },
+    "entityType": {
+      "bsonType": "string",
+      "enum": [
+        "enrollment",
+        "ticket"
+      ],
+      "description": "Type d'entité liée"
+    },
+    "lu": {
+      "bsonType": "bool",
+      "description": "Statut de lecture de la notification"
+    },
+    "createdAt": {
+      "bsonType": "string",
+      "description": "Date de création (ISO 8601)"
+    },
+    "expiresAt": {
+      "bsonType": "string",
+      "description": "Date d'expiration automatique (ISO 8601, optionnel)"
+    }
+  }
+}

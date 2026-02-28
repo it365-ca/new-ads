@@ -1,0 +1,86 @@
+{
+  "name": "auditLogs",
+  "type": "object",
+  "required": [
+    "entityType",
+    "entityId",
+    "action",
+    "userId",
+    "userName",
+    "userEmail",
+    "timestamp"
+  ],
+  "properties": {
+    "entityType": {
+      "bsonType": "string",
+      "enum": [
+        "enrollment",
+        "note",
+        "ticket",
+        "intervenant",
+        "message",
+        "conversation"
+      ],
+      "description": "Type d'entité modifiée"
+    },
+    "entityId": {
+      "bsonType": "string",
+      "description": "ID de l'entité concernée"
+    },
+    "action": {
+      "bsonType": "string",
+      "enum": [
+        "create",
+        "update",
+        "delete",
+        "status_change",
+        "restore"
+      ],
+      "description": "Type d'action effectuée"
+    },
+    "userId": {
+      "bsonType": "string",
+      "description": "ID de l'utilisateur qui a effectué l'action"
+    },
+    "userName": {
+      "bsonType": "string",
+      "description": "Nom complet de l'utilisateur"
+    },
+    "userEmail": {
+      "bsonType": "string",
+      "description": "Email de l'utilisateur"
+    },
+    "timestamp": {
+      "bsonType": "string",
+      "description": "Date et heure de l'action (ISO 8601)"
+    },
+    "changes": {
+      "bsonType": "object",
+      "description": "Détails des modifications effectuées",
+      "properties": {
+        "before": {
+          "bsonType": "object",
+          "description": "État avant modification"
+        },
+        "after": {
+          "bsonType": "object",
+          "description": "État après modification"
+        }
+      }
+    },
+    "metadata": {
+      "bsonType": "object",
+      "description": "Métadonnées additionnelles (optionnel)",
+      "properties": {
+        "ipAddress": {
+          "bsonType": "string",
+          "description": "Adresse IP de l'utilisateur"
+        },
+        "userAgent": {
+          "bsonType": "string",
+          "description": "User agent du navigateur"
+        }
+      }
+    }
+  }
+}

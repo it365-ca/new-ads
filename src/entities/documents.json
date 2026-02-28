@@ -1,0 +1,44 @@
+{
+  "name": "documents",
+  "type": "object",
+  "required": [
+    "enrollmentId",
+    "fileName",
+    "fileUrl",
+    "creator",
+    "createdAt",
+    "updatedAt"
+  ],
+  "properties": {
+    "enrollmentId": {
+      "bsonType": "string",
+      "description": "ID du dossier étudiant (référence à enrollments)"
+    },
+    "fileName": {
+      "bsonType": "string",
+      "description": "Nom du fichier"
+    },
+    "fileUrl": {
+      "bsonType": "string",
+      "description": "URL du fichier uploadé"
+    },
+    "fileType": {
+      "bsonType": "string",
+      "description": "Type de fichier (ex: application/pdf)"
+    },
+    "creator": {
+      "bsonType": "string",
+      "description": "ID du créateur"
+    },
+    "createdAt": {
+      "bsonType": "string",
+      "title": "datetime",
+      "description": "Date de création (ISO 8601)"
+    },
+    "updatedAt": {
+      "bsonType": "string",
+      "title": "datetime",
+      "description": "Date de mise à jour (ISO 8601)"
+    }
+  }
+}

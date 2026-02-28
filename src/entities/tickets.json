@@ -1,0 +1,124 @@
+{
+  "name": "tickets",
+  "type": "object",
+  "required": [
+    "ticketId",
+    "type",
+    "sujet",
+    "description",
+    "status",
+    "priorite",
+    "createdBy",
+    "createdByEmail",
+    "createdByName"
+  ],
+  "properties": {
+    "ticketId": {
+      "bsonType": "string",
+      "description": "ID unique du ticket (format: TICKET-YYYYMMDD-XXXXX)"
+    },
+    "type": {
+      "bsonType": "string",
+      "enum": [
+        "Trouble technique",
+        "Suggestion",
+        "Amélioration",
+        "Question",
+        "Autre"
+      ],
+      "description": "Type de demande de support"
+    },
+    "sujet": {
+      "bsonType": "string",
+      "description": "Sujet/titre du ticket"
+    },
+    "description": {
+      "bsonType": "string",
+      "description": "Description détaillée du problème ou suggestion"
+    },
+    "status": {
+      "bsonType": "string",
+      "enum": [
+        "Nouveau",
+        "En cours",
+        "En attente",
+        "Résolu",
+        "Fermé"
+      ],
+      "description": "Statut du ticket"
+    },
+    "priorite": {
+      "bsonType": "string",
+      "enum": [
+        "Basse",
+        "Normale",
+        "Haute",
+        "Urgente"
+      ],
+      "description": "Niveau de priorité"
+    },
+    "createdBy": {
+      "bsonType": "string",
+      "description": "ID utilisateur qui a créé le ticket"
+    },
+    "createdByEmail": {
+      "bsonType": "string",
+      "description": "Email de l'utilisateur"
+    },
+    "createdByName": {
+      "bsonType": "string",
+      "description": "Nom de l'utilisateur"
+    },
+    "reponses": {
+      "bsonType": "array",
+      "description": "Liste des réponses au ticket",
+      "items": {
+        "bsonType": "object",
+        "required": [
+          "auteur",
+          "auteurEmail",
+          "message",
+          "date"
+        ],
+        "properties": {
+          "auteur": {
+            "bsonType": "string",
+            "description": "Nom de l'auteur de la réponse"
+          },
+          "auteurEmail": {
+            "bsonType": "string",
+            "description": "Email de l'auteur"
+          },
+          "message": {
+            "bsonType": "string",
+            "description": "Contenu de la réponse"
+          },
+          "date": {
+            "bsonType": "string",
+            "description": "Date de la réponse (ISO 8601)"
+          },
+          "isAdmin": {
+            "bsonType": "bool",
+            "description": "Si la réponse vient d'un admin"
+          }
+        }
+      }
+    },
+    "fichierJoint": {
+      "bsonType": "string",
+      "description": "URL du fichier joint (optionnel)"
+    },
+    "creator": {
+      "bsonType": "string",
+      "description": "ID créateur Lumi"
+    },
+    "createdAt": {
+      "bsonType": "string",
+      "description": "Date de création (ISO 8601)"
+    },
+    "updatedAt": {
+      "bsonType": "string",
+      "description": "Date de dernière mise à jour (ISO 8601)"
+    }
+  }
+}
