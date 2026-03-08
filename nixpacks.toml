@@ -1,5 +1,8 @@
 [phases.setup]
 nixPkgs = ["deno"]
 
+[variables]
+DENO_VERSION = "2.0.0"
+
 [start]
 cmd = "deno run --unstable-cron functions/archiveNotes/index.ts"
