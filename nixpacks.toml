@@ -5,4 +5,4 @@ nixPkgs = ["deno"]
 DENO_VERSION = "2.0.0"
 
 [start]
-cmd = "deno run --unstable-cron functions/archiveNotes/index.ts"
+cmd = "deno run --unstable functions/archiveNotes/index.ts"
